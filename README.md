@@ -37,9 +37,6 @@ This repository contains a Tic-Tac-Toe game built using vanilla JavaScript. The 
 
 Contributions to the project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. Ensure that your contributions align with the coding style and conventions used in the project.
 
-## License
-
-This project is licensed under the [MIT License](/LICENSE).
 
 ## Acknowledgements
 
