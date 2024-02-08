@@ -28,18 +28,3 @@ This repository contains a Tic-Tac-Toe game built using vanilla JavaScript. The 
 6. To start a new round, click on the restart button.
 
 
-
-## Screenshot
-
-![Tic-Tac-Toe](/screenshots/tic-tac-toe.png)
-
-## Contributing
-
-Contributions to the project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. Ensure that your contributions align with the coding style and conventions used in the project.
-
-
-## Acknowledgements
-
-The Tic-Tac-Toe application is inspired by youtube tutorials by [WebDevSimplified](https://www.youtube.com/@WebDevSimplified). I am very thankful to WebDevSimplified for the following resource:
-
-- [WebDevSimplified: JavaScript-Tic-Tac-Toe](https://github.com/WebDevSimplified/JavaScript-Tic-Tac-Toe)
