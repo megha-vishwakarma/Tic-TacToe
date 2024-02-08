@@ -1,0 +1,174 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	--mark-size: calc(var(--cell-size) * .9);
+	--cell-size: 100px;
+}
+
+body {
+	background: linear-gradient(to top right, #082c45, #26a9dc);
+	font-family: sans-serif;
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
+.board {
+	grid-template-columns: repeat(3, auto);
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	height: 100vh;
+	display: grid;
+	width: 100vw;
+}
+
+.cell {
+	border: 4px solid white;
+	height: var(--cell-size);
+	width: var(--cell-size);
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+	border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+	border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+	border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+	border-bottom: none;
+}
+
+.cell.x,
+.cell.circle {
+	cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after {
+	background-color: white;
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+	height: calc(var(--mark-size) * .85);
+	width: calc(var(--mark-size) * .85);
+	position: absolute;
+	border-radius: 50%;
+	content: '';
+}
+
+.cell.circle::before {
+	border: calc(var(--mark-size) * .15) solid white;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+	background-color: #90a2af;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::before {
+	border: calc(var(--mark-size) * .15) solid #90a2af;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+	width: calc(var(--mark-size) * .15);
+	height: var(--mark-size);
+	position: absolute;
+	content: '';
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+	transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+	transform: rotate(-45deg);
+}
+
+.winning-message {
+	background-color: rgba(0, 0, 0, .9);
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	font-size: 5rem;
+	position: fixed;
+	color: white;
+	display: none;
+	inset: 0;
+}
+
+.winning-message button {
+	background-color: white;
+	border: 1px solid black;
+	padding: .25em .5em;
+	font-size: 3rem;
+	cursor: pointer;
+}
+
+.winning-message button:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+.winning-message.show {
+	display: flex;
+}
+
+.players {
+	justify-content: center;
+	top: calc(50vh - 222px);
+	align-items: center;
+	position: absolute;
+	display: flex;
+	gap: 1rem;
+	right: 0;
+	left: 0;
+}
+
+.player {
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	color: white;
+	display: flex;
+	gap: 0.25rem;
+}
+
+.player input {
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	max-width: 9rem;
+	height: 2rem;
+	border: none;
+}
+
+.player input:focus {
+	outline: none;
+}
